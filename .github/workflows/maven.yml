@@ -16,9 +16,7 @@ on:
 
 jobs:
   compile:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -32,7 +30,7 @@ jobs:
       
   securityChecks:
     runs-on: ubuntu-latest
-
+    needs: compile
     steps:
     - uses: actions/checkout@v4
     - name: Trivy Installation
